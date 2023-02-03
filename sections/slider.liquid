@@ -86,7 +86,7 @@
                     src="{{ product.featured_image | img_url: 'master'}}"
                     alt=""
                     class="product-img"></a>
-                <p>{{ product.price | money_with_currency }}</p>
+                <p>{{ product.price | money_without_trailing_zeros }}</p>
               </div>
             {% endfor %}
           </div>

@@ -1,5 +1,41 @@
 {
   "sections": {
+    "f96f2380-d93e-414d-b047-b962cf437491": {
+      "type": "slider",
+      "blocks": {
+        "7a419d34-6c58-4880-bd39-d83492c51655": {
+          "type": "column",
+          "settings": {
+            "image_text": "Summer has arrived",
+            "image": "shopify:\/\/shop_images\/dos-joven-hermosa-mujer-hipster-sonriente-ropa-verano-moda_158538-17637.jpg",
+            "collection": "coleccion-de-verano"
+          }
+        },
+        "61504028-42b8-4ad2-837f-63b84ecbab7f": {
+          "type": "column",
+          "settings": {
+            "image_text": "Autumn is near",
+            "image": "shopify:\/\/shop_images\/elegante-mujer-joven-hermosa-ropa-otono-moda-chaqueta-sueter-gafas-sol-posa-parque-follaje-colores-o.jpg",
+            "collection": "coleccion-de-invierno"
+          }
+        },
+        "77026a61-6fff-4ba7-b142-08aee41d5ba8": {
+          "type": "column",
+          "settings": {
+            "image_text": "Winter is coming",
+            "image": "shopify:\/\/shop_images\/retrato-mujer-ropa-invierno-sombrero-divertido-paisaje-invernal-hay-mucha-nieve-alrededor-foto-alta-calidad_163305-154887.jpg",
+            "collection": "coleccion-de-invierno-1"
+          }
+        }
+      },
+      "block_order": [
+        "7a419d34-6c58-4880-bd39-d83492c51655",
+        "61504028-42b8-4ad2-837f-63b84ecbab7f",
+        "77026a61-6fff-4ba7-b142-08aee41d5ba8"
+      ],
+      "settings": {
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -21,7 +57,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -37,7 +73,6 @@
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "adapt_height_first_image": false,
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
@@ -53,7 +88,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
@@ -69,6 +104,8 @@
         "text"
       ],
       "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
@@ -80,17 +117,24 @@
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "background-1",
+        "full_width": false,
         "show_view_all": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
         "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "enable_quick_add": false,
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
       }
@@ -128,6 +172,7 @@
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
         "color_scheme": "background-1",
         "padding_top": 36,
         "padding_bottom": 36
@@ -137,8 +182,8 @@
       "type": "video",
       "settings": {
         "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "heading_size": "h1",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -192,15 +237,16 @@
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "background-1",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
+    "f96f2380-d93e-414d-b047-b962cf437491",
     "image_banner",
     "rich_text",
     "featured_collection",

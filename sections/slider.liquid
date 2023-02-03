@@ -1,0 +1,141 @@
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+<style>
+
+  .img_box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .img_box img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+  }
+
+  .img_box span {
+    cursor: pointer;
+    font-family: arial;
+    font-size: 52px;
+    text-shadow: 0 0 12px black;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+
+  .img_box .autumn {
+    text-shadow: 0 0 12px #ff5f00;
+  }
+
+  .collection-wrapper {
+    display: flex;
+    height: 24%;
+    width: 40%;
+    position: absolute;
+    bottom: 32px;
+    right: 1%;
+    border-radius: 12px;
+    justify-content: center;
+  }
+
+  .collection-wrapper .productelement {
+    position: relative;
+    margin-right: 5%;
+    width: 30%;
+    flex: 1;
+  }
+
+  .collection-wrapper img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .collection-wrapper p {
+    text-shadow: 0 0 12px white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+    margin-top: 0;
+    color: black;
+  }
+</style>
+
+<div class="splide">
+  <div class="splide__track">
+    <div class="splide__list">
+      {% for block in section.blocks %}
+        <div class="splide__slide">
+          <div class="img_box">
+            <img
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt=""
+              class="product-img">
+            <span class="image-text">{{ block.settings.image_text }}</span>
+          </div>
+          <div class="collection-wrapper">
+            {% for product in block.settings.collection.products limit: 3 %}
+              <div class="productelement">
+                <a href="{{ product.url }}"><img
+                    src="{{ product.featured_image | img_url: 'master'}}"
+                    alt=""
+                    class="product-img"></a>
+                <p>{{ product.price | money_with_currency }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+  var splide = new Splide('.splide', {
+    type: 'loop',
+    autoplay: true,
+    interval: 5000
+  });
+  splide.mount();
+</script>
+
+{% schema %}
+
+  {
+    "name": "Slider",
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Image and title",
+        "settings": [
+          {
+            "type": "text",
+            "id": "image_text",
+            "label": "Title",
+            "default": "Image title"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Select image"
+          }, {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slider"
+      }
+    ]
+  }
+{% endschema %}
